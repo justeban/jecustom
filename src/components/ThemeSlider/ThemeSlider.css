@@ -1,0 +1,44 @@
+.ThemeSlider {
+  align-self: flex-end;
+  border-radius: 30px;
+  border: solid black 3px;
+  color: var(--dark_color);
+  display: flex;
+  font-size: 18px;
+  margin-top: 1em;
+  padding: .1em;
+  position: relative;
+
+  transition: all .3s ease;
+}
+
+.App.dark .ThemeSlider {
+  border-color: var(--light_color);
+  color: var(--light_color);
+}
+
+.ThemeSlider::before {
+  content: '';
+  top: 0;
+  left: 1px;
+  bottom: 0;
+  margin: auto;
+  position: absolute;
+  border-radius: 50%;
+  background: var(--dark_color);
+  --width: 45%;
+  width: var(--width);
+  height: calc(var(--width) * 2);
+}
+
+.App.dark .ThemeSlider::before {
+  background: var(--light_color);
+}
+
+.ThemeSlider.dark::before {
+  left: calc(100% - 50%);
+}
+
+.ThemeSlider > span {
+  padding: .1em;
+}

@@ -1,0 +1,52 @@
+.Links {
+  /* font-size: 24px; */
+  align-items: center;
+  color: var(--dark_color);
+  display: flex;
+  flex-direction: column;
+}
+
+.App.dark .Links {
+  color: var(--light_color);
+}
+
+.Links_link {
+  align-items: center;
+  display: flex;
+  flex: 1;
+}
+.Links_link a {
+  color: var(--dark_color);
+  /* font-weight: 500; */
+  margin: 1em;
+  padding: .3em;
+  position: relative;
+  text-decoration: none;
+  transition: all .3s ease;
+}
+
+.Links_link a:before {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  border-bottom: solid 1px var(--dark_color);
+  content: '';
+  height: 100%;
+  position: absolute;
+  width: 0%;
+
+  transition: all .3s ease;
+}
+
+.Links_link a:hover:before {
+  width: 100%;
+}
+
+.App.dark .Links_link a {
+  color: var(--light_color);
+}
+
+.App.dark .Links_link a:before {
+  border-bottom: solid 1px var(--light_color);
+}

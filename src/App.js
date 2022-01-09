@@ -1,22 +1,22 @@
-import logo from './logo.svg';
+import React, {useState} from 'react';
+import classNames from 'classnames';
+
+import ThemeSlider from './components/ThemeSlider';
+import Links from './components/Links';
+
+import lightLogo from './images/jecustomlogo-2-rect.png';
+import darkLogo from './images/jecustomlogo-2-white-rect.png'
+
 import './App.css';
 
 function App() {
+  const [themeIsDark, setTheme] = useState(false);
   return (
-    <div className="App">
+    <div className={classNames({App: true, dark: themeIsDark})}>
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <ThemeSlider theme={themeIsDark} setTheme={setTheme}/>
+        <img src={themeIsDark ? darkLogo : lightLogo} className="App-logo" alt="logo" />
+        <Links />
       </header>
     </div>
   );
